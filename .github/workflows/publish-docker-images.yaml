@@ -26,5 +26,5 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          context: ./backup-db
+          context: ./backup-db/
           tags: ${{ secrets.SCW_REGISTRY }}/mesads/backup-db:latest
