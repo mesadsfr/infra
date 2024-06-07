@@ -13,6 +13,7 @@ ENV S3_PATH=
 RUN apt-get update && apt-get install -y \
     curl \
     ca-certificates \
+    python3-full \
     python3-pip
 
 # Install postgresql-client-15

@@ -6,7 +6,7 @@ on:
       - "master"
 
 jobs:
-  docker:
+  build-docker-image-backup-db:
     runs-on: ubuntu-latest
     steps:
       - name: Set up QEMU
