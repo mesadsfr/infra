@@ -12,7 +12,8 @@ ENV S3_PATH=
 
 RUN apt-get update && apt-get install -y \
     curl \
-    ca-certificates 
+    ca-certificates \
+    unzip
 
 # Install postgresql-client-15
 RUN install -d /usr/share/postgresql-common/pgdg
