@@ -13,8 +13,7 @@ ENV S3_PATH=
 RUN apt-get update && apt-get install -y \
     curl \
     ca-certificates \
-    python3 \
-    pipx
+    awscli
 
 # Install postgresql-client-15
 RUN install -d /usr/share/postgresql-common/pgdg
@@ -24,8 +23,6 @@ RUN sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql
 RUN apt-get update && apt-get install -y \
     postgresql-client-15
 
-# Install awscli
-RUN pipx install awscli awscli-plugin-endpoint
 
 COPY ./aws_config /root/.aws/config
 COPY backup.sh /backup.sh
