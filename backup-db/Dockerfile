@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y \
 
 # Install awscli
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/tmp/awscliv2.zip"
-RUN unzip /tmp/awscliv2.zip
+RUN unzip /tmp/awscliv2.zip -d /tmp
 RUN /tmp/aws/install
 
 COPY ./aws_config /root/.aws/config
