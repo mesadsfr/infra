@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM python
 
 # These are the environment variables that need to be set for the backup script to work
 ENV PGHOST=
@@ -24,9 +24,7 @@ RUN apt-get update && apt-get install -y \
     postgresql-client-15
 
 # Install awscli
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/tmp/awscliv2.zip"
-RUN unzip /tmp/awscliv2.zip -d /tmp
-RUN /tmp/aws/install
+RUN pip install awscli awscli-plugin-endpoint
 
 COPY ./aws_config /root/.aws/config
 COPY backup.sh /backup.sh
