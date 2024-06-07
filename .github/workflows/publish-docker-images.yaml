@@ -22,6 +22,9 @@ jobs:
           username: ${{ secrets.SCW_ACCESS_KEY }}
           password: ${{ secrets.SCW_SECRET_KEY }}
 
+      - name: Check out code
+        uses: actions/checkout@v4
+
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
