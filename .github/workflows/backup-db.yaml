@@ -1,4 +1,4 @@
-name: publish-docker-images
+name: Push backup-db Docker image
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - "master"
 
 jobs:
-  build-docker-image-backup-db:
+  image-backup-db:
     runs-on: ubuntu-latest
     steps:
       - name: Set up QEMU
