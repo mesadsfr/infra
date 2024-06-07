@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     ca-certificates \
     python3 \
-    python3-pip
+    pipx
 
 # Install postgresql-client-15
 RUN install -d /usr/share/postgresql-common/pgdg
@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y \
     postgresql-client-15
 
 # Install awscli
-RUN pip3 install awscli awscli-plugin-endpoint
+RUN pipx install awscli awscli-plugin-endpoint
 
 COPY ./aws_config /root/.aws/config
 COPY backup.sh /backup.sh
