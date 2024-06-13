@@ -16,4 +16,4 @@ COPY rclone_config.tpl /root/.config/rclone/rclone.conf.tpl
 
 COPY ./entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["/usr/bin/rclone", "sync", "clevercloud:", "scaleway:mesads-backups/s3/", "-v"]
+CMD ["/usr/bin/rclone", "sync", "clevercloud:", "scaleway:mesads-backups/s3/", "-v", "--checksum", "--fast-list"]
