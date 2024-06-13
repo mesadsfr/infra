@@ -30,4 +30,4 @@ jobs:
         with:
           push: true
           context: ./backup-db/
-          tags: ${{ secrets.SCW_REGISTRY }}/mesads/backup-db:latest
+          tags: ${{ secrets.SCW_REGISTRY }}/backup-db:latest
